@@ -19,6 +19,8 @@
 </template>
 
 <script>
+  import { states } from '../enums/task.states';
+
   export default {
     name: 'Task',
     props: {
@@ -31,7 +33,7 @@
     },
     computed: {
       isChecked() {
-        return this.task.state === 'TASK_ARCHIVED';
+        return this.task.state === states.archived;
       },
     },
   };

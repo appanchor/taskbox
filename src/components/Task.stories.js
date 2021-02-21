@@ -1,5 +1,6 @@
 // src/components/Task.stories.js
 
+import { states } from '../enums/task.states';
 import Task from './Task';
 import { action } from '@storybook/addon-actions';
 
@@ -27,7 +28,7 @@ Default.args = {
   task: {
     id: '1',
     title: 'Test Task',
-    state: 'TASK_INBOX',
+    state: states.inbox,
     updatedAt: new Date(2018, 0, 1, 9, 0),
   },
 };
@@ -36,7 +37,7 @@ export const Pinned = Template.bind({});
 Pinned.args = {
   task: {
     ...Default.args.task,
-    state: 'TASK_PINNED',
+    state: states.pinned,
   },
 };
 
@@ -44,6 +45,6 @@ export const Archived = Template.bind({});
 Archived.args = {
   task: {
     ...Default.args.task,
-    state: 'TASK_ARCHIVED',
+    state: states.archived,
   },
 };
